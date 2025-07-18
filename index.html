@@ -10,17 +10,19 @@
 <body>
 
   <!-- Navbar -->
-  <header class="header-section" id="home">
-    <nav class="navbar">
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
+ <header>
+  <div class="navbar">
+    <div class="logo"><a href="/">Isra Fatima</a></div>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects.html">Projects</a></li>
+        <li><a href="/resume.html">Resume</a></li>
+        <li><a href="/contact.html">Contact</a></li>
       </ul>
     </nav>
-  </header>
+  </div>
+</header>
 
   <!-- About Section -->
   <section class="about-section" id="about">
@@ -59,34 +61,38 @@
     </div>
   </section>
 
-  <!-- Feedback Section -->
-  <section class="feedback-section">
-    <h2>Client Feedback</h2>
-    <div class="feedback-cards">
-      <div class="feedback-card"><img src="images/feedback1.png" alt="Feedback 1" /></div>
-      <div class="feedback-card"><img src="images/feedback2.png" alt="Feedback 2" /></div>
-      <div class="feedback-card"><img src="images/feedback3.png" alt="Feedback 3" /></div>
-      <div class="feedback-card"><img src="images/feedback4.png" alt="Feedback 4" /></div>
-    </div>
-  </section>
+<section class="feedback-section">
+  <h2>Client Feedback</h2>
+  <div class="feedback-scroll-wrapper">
+    <div class="feedback-card"><img src="images/feedback1.png" alt="Feedback 1" /></div>
+    <div class="feedback-card"><img src="images/feedback2.png" alt="Feedback 2" /></div>
+    <div class="feedback-card"><img src="images/feedback3.png" alt="Feedback 3" /></div>
+    <div class="feedback-card"><img src="images/feedback4.png" alt="Feedback 4" /></div>
+  </div>
+  <div class="scroll-hint">&#8594;</div> <!-- 👈 This is the right scroll arrow -->
+</section>
 
-  <!-- Gallery Section -->
-  <section class="image-gallery">
-    <div class="card-container">
-      <!-- 10 image placeholders -->
-      <div class="image-card"><img src="images/image1.jpeg" alt="Story 1" /></div>
-      <div class="image-card"><img src="images/image2.jpeg" alt="Story 2" /></div>
-      <div class="image-card"><img src="images/image3.jpeg" alt="Story 3" /></div>
-      <div class="image-card"><img src="images/image4.jpeg" alt="Story 3" /></div>
-      <div class="image-card"><img src="images/image5.jpeg" alt="Story 3" /></div>
-      <div class="image-card"><img src="images/image6.jpeg" alt="Story 3" /></div>
-      <div class="image-card"><img src="images/image7.jpeg" alt="Story 3" /></div>
-      <div class="image-card"><img src="images/image8.jpeg" alt="Story 3" /></div>
-      <div class="image-card"><img src="images/image9.jpeg" alt="Story 3" /></div>
-      <div class="image-card"><img src="images/image10.jpeg" alt="Story 3" /></div>
-      <!-- ...continue till story10.jpeg -->
-    </div>
-  </section>
+
+
+
+<!-- Gallery Section -->
+<section class="image-gallery">
+  <h2 class="gallery-title" onclick="toggleGallery()">
+    📸 social media feedback <span class="arrow-icon">▼</span>
+  </h2>
+  <div class="card-container" id="galleryContent">
+    <div class="image-card"><img src="images/image1.jpeg" alt="Story 1" /></div>
+    <div class="image-card"><img src="images/image2.jpeg" alt="Story 2" /></div>
+    <div class="image-card"><img src="images/image3.jpeg" alt="Story 3" /></div>
+    <div class="image-card"><img src="images/image4.jpeg" alt="Story 4" /></div>
+    <div class="image-card"><img src="images/image5.jpeg" alt="Story 5" /></div>
+    <div class="image-card"><img src="images/image6.jpeg" alt="Story 6" /></div>
+    <div class="image-card"><img src="images/image7.jpeg" alt="Story 7" /></div>
+    <div class="image-card"><img src="images/image8.jpeg" alt="Story 8" /></div>
+    <div class="image-card"><img src="images/image9.jpeg" alt="Story 9" /></div>
+    <div class="image-card"><img src="images/image10.jpeg" alt="Story 10" /></div>
+  </div>
+</section>
 
   <section class="faq-section">
   <h2 class="section-title">Frequently Asked Questions</h2>

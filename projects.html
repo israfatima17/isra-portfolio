@@ -130,31 +130,117 @@
       object-fit: cover;
       box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
     }
+----------
+/* Wrapper for horizontal scroll */
+.grid-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
 
-    .social-media-grid .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      justify-items: center;
-    }
-    .social-media-grid .grid div {
-      max-width: 250px;
-      width: 100%;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-    }
-    .social-media-grid img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
-    }
-    .social-media-grid img:hover {
-      transform: scale(1.05);
-    }
+/* Grid layout updated for horizontal scroll */
+.auto-scroll-grid {
+  display: flex;
+  gap: 20px;
+  animation: scroll-left 40s linear infinite;
+}
 
+.auto-scroll-grid div {
+  flex: 0 0 auto;
+  width: 220px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  scroll-snap-align: start;
+  cursor: pointer;
+}
+
+.auto-scroll-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.auto-scroll-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Auto-scroll animation */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .auto-scroll-grid div {
+    width: 160px;
+  }
+}
+/* Only this scrolls horizontally */
+.social-scroll-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding-bottom: 10px;
+}
+
+/* Hide extra scrollbars (optional) */
+.social-scroll-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* Horizontal row */
+.scroll-track {
+  display: inline-flex;
+  gap: 20px;
+  padding-left: 10px;
+}
+
+/* Each image card */
+.scroll-track div {
+  flex: 0 0 auto;
+  width: 250px;
+  height: 350px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.scroll-track img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Prevent body from horizontal overflow */
+body {
+  overflow-x: hidden;
+}
+
+
+----------
+
+
+/* General footer rules */
+footer, .footer {
+  background-color: #0d1b2a !important;
+  color: #ffffff !important;
+  padding: 40px 20px !important;
+  text-align: center;
+}
+
+/* Icons brightness/invert */
+.footer-socials a img {
+  filter: brightness(0) invert(1) !important;
+}
     footer {
       background-color: #0d1b2a;
       color: white;
@@ -222,7 +308,7 @@ footer .footer-socials a:hover img {
   <nav>
     <ul>
       <li><a href="/">Home</a></li>
-      <li><a href="/projects">Projects</a></li>
+      <li><a href="/projects.html">Projects</a></li>
       <li><a href="resume.html">Resume</a></li>
       <li><a href="/contact.html">Contact</a></li>
     </ul>
@@ -312,26 +398,29 @@ footer .footer-socials a:hover img {
 
 <section class="section-bg-2 social-media-grid">
   <h2>My Social Media Designs</h2>
-  <div class="grid">
-    <div><img src="project/socialmedia/pic (1).jpg" alt="Design 1" data-full="pic (1).jpg" /></div>
-    <div><img src="project/socialmedia/pic (1).png" alt="Design 2" data-full="pic (1).png" /></div>
-    <div><img src="project/socialmedia/pic (2).jpg" alt="Design 3" data-full="pic (2).jpg" /></div>
-    <div><img src="project/socialmedia/pic (2).png" alt="Design 4" data-full="pic (2).png" /></div>
-    <div><img src="project/socialmedia/pic (3).jpg" alt="Design 5" data-full="pic (3).jpg" /></div>
-    <div><img src="project/socialmedia/pic (3).png" alt="Design 6" data-full="pic (3).png" /></div>
-    <div><img src="project/socialmedia/pic (4).jpg" alt="Design 7" data-full="pic (4).jpg" /></div>
-    <div><img src="project/socialmedia/pic (4).png" alt="Design 8" data-full="pic (4).png" /></div>
-    <div><img src="project/socialmedia/pic (5).jpg" alt="Design 9" data-full="pic (5).jpg" /></div>
-    <div><img src="project/socialmedia/pic (5).png" alt="Design 10" data-full="pic (5).png" /></div>
-    <div><img src="project/socialmedia/pic (6).jpg" alt="Design 11" data-full="pic (6).jpg" /></div>
-    <div><img src="project/socialmedia/pic (6).png" alt="Design 12" data-full="pic (6).png" /></div>
-    <div><img src="project/socialmedia/pic (7).jpg" alt="Design 13" data-full="pic (7).jpg" /></div>
-    <div><img src="project/socialmedia/pic (7).png" alt="Design 14" data-full="pic (7).png" /></div>
-    <div><img src="project/socialmedia/Black and Blue Illustration Data Protection Day Social Media Graphic.png" alt="Design 14" data-full="pic (7).png" /></div>
-    <div><img src="project/socialmedia/Blue and White Illustrative App Development Instagram Post (1).png" alt="Design 14" data-full="pic (7).png" /></div>
-    <div><img src="project/socialmedia/Blue and White Illustrative App Development Instagram Post (2).png" alt="Design 14" data-full="pic (7).png" /></div>
+    <div class="social-scroll-wrapper">
+    <div class="scroll-track">
+      <div><img src="project/socialmedia/pic (1).jpg" alt="Design 1" data-full="pic (1).jpg" /></div>
+      <div><img src="project/socialmedia/pic (1).png" alt="Design 2" data-full="pic (1).png" /></div>
+      <div><img src="project/socialmedia/pic (2).jpg" alt="Design 3" data-full="pic (2).jpg" /></div>
+      <div><img src="project/socialmedia/pic (2).png" alt="Design 4" data-full="pic (2).png" /></div>
+      <div><img src="project/socialmedia/pic (3).jpg" alt="Design 5" data-full="pic (3).jpg" /></div>
+      <div><img src="project/socialmedia/pic (3).png" alt="Design 6" data-full="pic (3).png" /></div>
+      <div><img src="project/socialmedia/pic (4).jpg" alt="Design 7" data-full="pic (4).jpg" /></div>
+      <div><img src="project/socialmedia/pic (4).png" alt="Design 8" data-full="pic (4).png" /></div>
+      <div><img src="project/socialmedia/pic (5).jpg" alt="Design 9" data-full="pic (5).jpg" /></div>
+      <div><img src="project/socialmedia/pic (5).png" alt="Design 10" data-full="pic (5).png" /></div>
+      <div><img src="project/socialmedia/pic (6).jpg" alt="Design 11" data-full="pic (6).jpg" /></div>
+      <div><img src="project/socialmedia/pic (6).png" alt="Design 12" data-full="pic (6).png" /></div>
+      <div><img src="project/socialmedia/pic (7).jpg" alt="Design 13" data-full="pic (7).jpg" /></div>
+      <div><img src="project/socialmedia/pic (7).png" alt="Design 14" data-full="pic (7).png" /></div>
+      <div><img src="project/socialmedia/Black and Blue Illustration Data Protection Day Social Media Graphic.png" alt="Design 15" data-full="..." /></div>
+      <div><img src="project/socialmedia/Blue and White Illustrative App Development Instagram Post (1).png" alt="Design 16" data-full="..." /></div>
+      <div><img src="project/socialmedia/Blue and White Illustrative App Development Instagram Post (2).png" alt="Design 17" data-full="..." /></div>
+    </div>
   </div>
 </section>
+
 
 <footer>
   <div class="footer-socials">
